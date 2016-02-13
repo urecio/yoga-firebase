@@ -1,6 +1,5 @@
 {
   "generator-angular-scalable": {
-    "appName": "yogaSequence",
-    "componentName": "builder"
+    "appName": "yogaSequence"
   }
 }
