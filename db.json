@@ -1,0 +1,22 @@
+{
+  "ashanas": [
+    {
+      "name-sanskrit": "adhas mukha",
+      "name-english": "Downward facing dog",
+      "slug": "Downward-facing-dog",
+      "image": "http://f.tqn.com/y/yoga/1/S/r/bigdowndog.jpg"
+    },
+    {
+      "name-sanskrit": "Urdhva Mukha",
+      "name-english": "Upward-Facing Dog",
+      "slug": "upward-facing-dog",
+      "image": "images/ashanas/upward-facing-dog.png"
+    },
+    {
+      "name-sanskrit": "Tadasana",
+      "name-english": "Mountain",
+      "slug": "mountain",
+      "image": "images/ashanas/mountain.png"
+    }
+  ]
+}
