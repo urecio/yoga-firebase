@@ -1,26 +1,34 @@
 'use strict';
 
 /**
- * Home module.
+ * home module.
  * @ngdoc overview
- * @name Home
+ * @name home
  * @description
  *
  * # Main module of the feature.
  */
 
-(function() {
 
-  function home($stateProvider) {
+(function(){
 
-    $stateProvider
-      .state('home', {
-        url:'/',
-        templateUrl: 'components/home/views/home.view.html',
-      });
+
+
+
+  function home( $stateProvider ) {
+
+
+
+    $stateProvider.state('baselayout.home', {
+      url: '/',
+      controller: 'homeController as homeController',
+      templateUrl: 'components/home/views/home.view.html',
+    });
+
+
+
   }
 
-  angular.module('yogaSequence.home', [
-    'ui.router'
-  ]).config(home);
+  angular.module('yogaSequence.home', [])
+    .config(home);
 })();

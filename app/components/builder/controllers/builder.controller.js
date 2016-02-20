@@ -1,15 +1,15 @@
 'use strict';
 
 /**
- *  controller.
+ * builder controller.
  *
  * @ngdoc overview
- * @name  Controller
+ * @name  builderController
  * @description
  */
 (function(){
 
-  function Controller() {
+  function builderController() {
 
     var self = this;
 
@@ -18,5 +18,5 @@
   }
 
   angular.module('yogaSequence.builder')
-    .controller('Controller',Controller);
+    .controller('builderController',builderController);
 })();

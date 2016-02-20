@@ -1,6 +1,9 @@
 // COMMONS
 
+@import 'vendor';
+
 // include: "type": "scss", "basePath": "app", "files": "common/**/*.scss"
+@import "common/base-layout/styles/main/_base-layout.scss";
 // /include
 
 // END COMMONS
@@ -8,6 +11,11 @@
 // COMPONENTS
 
 // include: "type": "scss", "basePath": "app", "files": "components/**/main/*.scss"
+@import "components/ashana/styles/main/_ashana.scss";
+@import "components/ashanas/styles/main/_ashanas.scss";
+@import "components/builder/styles/main/_builder.scss";
+@import "components/home/styles/main/_home.scss";
+@import "components/profile/styles/main/_profile.scss";
 // /include
 
 // END COMPONENTS

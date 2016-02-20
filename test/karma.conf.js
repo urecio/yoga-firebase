@@ -45,9 +45,17 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
 
-// TODO: check if karma works 
-
       // bower:js
+      '../bower_components/jquery/dist/jquery.js',
+      '../bower_components/es5-shim/es5-shim.js',
+      '../bower_components/placeholders/dist/placeholders.js',
+      '../bower_components/angular/angular.js',
+      '../bower_components/angular-sanitize/angular-sanitize.js',
+      '../bower_components/lodash/lodash.js',
+      '../bower_components/angular-cache/dist/angular-cache.js',
+      '../bower_components/restangular/dist/restangular.js',
+      '../bower_components/angular-ui-router/release/angular-ui-router.js',
+      '../bower_components/angular-mocks/angular-mocks.js',
       // endbower
 
       'test/js/tools/*.js',

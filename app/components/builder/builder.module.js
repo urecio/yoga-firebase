@@ -12,6 +12,9 @@
 
 (function(){
 
+  
+  
+
   function builder( $stateProvider ) {
 
     
@@ -19,7 +22,7 @@
     $stateProvider.state('builder', {
       url: '/builder',
       controller: 'builderController as builderController', 
-      templateUrl: '/Users/unairecio/sources/yoga-firebase/app/components/builder/views/builder.view.html',  
+      templateUrl: 'components/builder/views/builder.view.html',  
     });
 
     

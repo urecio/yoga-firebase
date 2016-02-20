@@ -3,22 +3,18 @@
 /**
  * Karma unit tests.
  */
-describe('Controller', function(){
+describe('builderController', function(){
 
-  var Controller;
+  var builderController;
 
   beforeEach(module('yogaSequence.builder'));
 
   beforeEach(inject(function(_$rootScope_, _$controller_) {
 
-    Controller = _$controller_('Controller', {
+    builderController = _$controller_('builderController', {
       $scope: _$rootScope_.$new()
     });
 
   }));
-
-  it('should show a list of ashanas', function () {
-
-  });
 
 });

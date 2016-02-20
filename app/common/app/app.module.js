@@ -10,15 +10,23 @@
  */
 angular
 .module('yogaSequence', [
-  'ngSanitize',
 
-  /* COMMONS */
-  'yogaSequence.cache',
-  /* END COMMONS */
+    'ui.router',
+    'ngSanitize',
 
-  /* COMPONENTS */
-  'yogaSequence.home',
-  /* END COMPONENTS */
+    /* COMMONS */
+    'yogaSequence.cache',
+'yogaSequence.baseLayout',
+/* END COMMON */
+
+    /* COMPONENTS */
+'yogaSequence.home',
+'yogaSequence.profile',
+'yogaSequence.ashanas',
+'yogaSequence.ashana',
+'yogaSequence.builder',
+/* END COMPONENTS */
+
   ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/');
