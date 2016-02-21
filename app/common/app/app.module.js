@@ -25,6 +25,12 @@ angular
 'yogaSequence.ashanas',
 'yogaSequence.ashana',
 'yogaSequence.builder',
+'yogaSequence.mySequences',
+'yogaSequence.mySequences',
+'yogaSequence.sequences',
+'yogaSequence.sequence',
+'yogaSequence.profile',
+'yogaSequence.login',
 /* END COMPONENTS */
 
   ])

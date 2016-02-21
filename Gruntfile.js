@@ -34,7 +34,10 @@ module.exports = function (grunt) {
         'app/components/profile/styles/main/_profile.scss': 'app/components/profile/styles/main/_profile.scss',
         'app/components/ashanas/styles/main/_ashanas.scss': 'app/components/ashanas/styles/main/_ashanas.scss',
         'app/components/ashana/styles/main/_ashana.scss': 'app/components/ashana/styles/main/_ashana.scss',
-        'app/components/builder/styles/main/_builder.scss': 'app/components/builder/styles/main/_builder.scss'
+        'app/components/builder/styles/main/_builder.scss': 'app/components/builder/styles/main/_builder.scss',
+        'app/components/my-sequences/styles/main/_my-sequences.scss': 'app/components/my-sequences/styles/main/_my-sequences.scss',
+        'app/components/sequences/styles/main/_sequences.scss': 'app/components/sequences/styles/main/_sequences.scss',
+        'app/components/sequence/styles/main/_sequence.scss': 'app/components/sequence/styles/main/_sequence.scss'
     };
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -200,10 +203,10 @@ module.exports = function (grunt) {
         // Automatically inject Bower components into the app
         wiredep: {
             options: {
-              exclude: [
-                'bootstrap-sass-official',
-                '/bower_components/bootstrap/',
-              ]
+                exclude: [
+                    'bootstrap-sass-official',
+                    '/bower_components/bootstrap/'
+                ]
             },
             app: {
                 src: ['<%= yeoman.app %>/index.html'],
@@ -433,6 +436,13 @@ module.exports = function (grunt) {
             options: { configFile: 'test/karma.conf.js' },
             unit: { singleRun: false },
             ci: { singleRun: true }
+        },
+        protractor: {
+            options: {
+                keepAlive: true,
+                noColor: false
+            },
+            all: { options: { configFile: 'test/e2e/conf.js' } }
         },
         /*
          ***************************** NGTEMPLATES TASKS *****************************

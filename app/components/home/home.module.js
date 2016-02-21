@@ -29,6 +29,8 @@
 
   }
 
-  angular.module('yogaSequence.home', [])
+  angular.module('yogaSequence.home', [
+    'ui.router'
+  ])
     .config(home);
 })();

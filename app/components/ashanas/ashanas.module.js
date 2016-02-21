@@ -12,23 +12,25 @@
 
 (function(){
 
-  
-  
+
+
 
   function ashanas( $stateProvider ) {
 
-    
+
 
     $stateProvider.state('ashanas', {
       url: '/ashanas',
-      controller: 'ashanasController as ashanasController', 
-      templateUrl: 'components/ashanas/views/ashanas.view.html',  
+      controller: 'ashanasController as ashanasController',
+      templateUrl: 'components/ashanas/views/ashanas.view.html',
     });
 
-    
+
 
   }
 
-  angular.module('yogaSequence.ashanas', [])
+  angular.module('yogaSequence.ashanas', [
+    'ui.router'
+  ])
     .config(ashanas);
 })();

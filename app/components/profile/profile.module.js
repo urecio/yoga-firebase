@@ -20,8 +20,8 @@
     
 
     $stateProvider.state('profile', {
-      url: '/profile',
-      controller: 'profileController as profileController', 
+      url: '/profile', 
+      controller: 'profileController as profileController',     
       templateUrl: 'components/profile/views/profile.view.html',  
     });
 
@@ -29,6 +29,10 @@
 
   }
 
-  angular.module('yogaSequence.profile', [])
+  angular.module('yogaSequence.profile', [
+    
+    'ui.router'
+    
+  ])
     .config(profile);
 })();

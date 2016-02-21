@@ -12,23 +12,25 @@
 
 (function(){
 
-  
-  
+
+
 
   function builder( $stateProvider ) {
 
-    
+
 
     $stateProvider.state('builder', {
       url: '/builder',
-      controller: 'builderController as builderController', 
-      templateUrl: 'components/builder/views/builder.view.html',  
+      controller: 'builderController as builderController',
+      templateUrl: 'components/builder/views/builder.view.html',
     });
 
-    
+
 
   }
 
-  angular.module('yogaSequence.builder', [])
+  angular.module('yogaSequence.builder', [
+    'ui.router'
+  ])
     .config(builder);
 })();

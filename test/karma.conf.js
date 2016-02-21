@@ -5,6 +5,18 @@
 // generator-karma 0.8.2
 
 module.exports = function(config) {
+
+  var wiredep = require('wiredep');
+  var bowerFiles = wiredep({devDependencies: true})['js'];
+
+  // assuring jquery is before angular
+  for (var i = 0; i < bowerFiles.length; i++) {
+    if ( bowerFiles[i].indexOf('jquery') !== -1 ) {
+      bowerFiles.unshift(bowerFiles.splice(i, 1)[0]);
+      break;
+    }
+  }
+
   config.set({
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
@@ -42,23 +54,11 @@ module.exports = function(config) {
     // testing framework to use (jasmine/mocha/qunit/...)
     frameworks: ['jasmine'],
 
-    // list of files / patterns to load in the browser
-    files: [
+    files: bowerFiles.concat([
 
-      // bower:js
-      '../bower_components/jquery/dist/jquery.js',
-      '../bower_components/es5-shim/es5-shim.js',
-      '../bower_components/placeholders/dist/placeholders.js',
-      '../bower_components/angular/angular.js',
-      '../bower_components/angular-sanitize/angular-sanitize.js',
-      '../bower_components/lodash/lodash.js',
-      '../bower_components/angular-cache/dist/angular-cache.js',
-      '../bower_components/restangular/dist/restangular.js',
-      '../bower_components/angular-ui-router/release/angular-ui-router.js',
-      '../bower_components/angular-mocks/angular-mocks.js',
-      // endbower
+      {pattern: 'test/mocks/*', included: false},
 
-      'test/js/tools/*.js',
+      'test/tools/*.js',
 
       'app/common/*/*.js',
       'app/common/*/**/*.js',
@@ -67,7 +67,7 @@ module.exports = function(config) {
       'app/components/*/**/*.js',
 
       'app/**/*.html'
-    ],
+    ]),
 
     // list of files / patterns to exclude
     exclude: [

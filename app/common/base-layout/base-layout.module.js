@@ -29,6 +29,8 @@
 
   }
 
-  angular.module('yogaSequence.baseLayout', [])
+  angular.module('yogaSequence.baseLayout', [
+    'ui.router'
+  ])
     .config(baseLayout);
 })();
