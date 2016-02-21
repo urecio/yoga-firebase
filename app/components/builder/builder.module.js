@@ -19,7 +19,7 @@
 
 
 
-    $stateProvider.state('builder', {
+    $stateProvider.state('baselayout.builder', {
       url: '/builder',
       controller: 'builderController as builderController',
       templateUrl: 'components/builder/views/builder.view.html',

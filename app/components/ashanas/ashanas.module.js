@@ -19,10 +19,15 @@
 
 
 
-    $stateProvider.state('ashanas', {
+    $stateProvider.state('baselayout.ashanas', {
       url: '/ashanas',
       controller: 'ashanasController as ashanasController',
       templateUrl: 'components/ashanas/views/ashanas.view.html',
+      resolve: {
+        ashanas: function (Ashanas) {
+          return Ashanas.getAll();
+        }
+      }
     });
 
 
@@ -30,7 +35,10 @@
   }
 
   angular.module('yogaSequence.ashanas', [
-    'ui.router'
+    'ui.router',
+    'restangular',
+    'yogaSequence.env',
+    'smart-table'
   ])
     .config(ashanas);
 })();

@@ -1,3 +1,4 @@
+
 'use strict';
 /**
  * @ngdoc overview
@@ -13,6 +14,9 @@ angular
 
     'ui.router',
     'ngSanitize',
+    'restangular',
+    'formly',
+    'formlyBootstrap',
 
     /* COMMONS */
     'yogaSequence.cache',
@@ -26,7 +30,6 @@ angular
 'yogaSequence.ashana',
 'yogaSequence.builder',
 'yogaSequence.mySequences',
-'yogaSequence.mySequences',
 'yogaSequence.sequences',
 'yogaSequence.sequence',
 'yogaSequence.profile',
@@ -34,9 +37,11 @@ angular
 /* END COMPONENTS */
 
   ])
-  .config(function($urlRouterProvider, $locationProvider) {
+  .config(function($urlRouterProvider, $locationProvider, RestangularProvider, API) {
     $urlRouterProvider.otherwise('/');
 
     $locationProvider.html5Mode(false);
     $locationProvider.hashPrefix('!');
+
+    RestangularProvider.setBaseUrl(API);
   });

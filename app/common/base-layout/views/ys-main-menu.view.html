@@ -1,1 +1,23 @@
-<p>This is the ysMainMenu view.</p>
+<ul>
+  <li><a ui-sref=".home">Home</a></li>
+  <li><a ui-sref=".ashanas">Ashanas</a></li>
+  <li><a ui-sref=".sequences">Sequences</a></li>
+  <li><a ui-sref=".builder">Build</a></li>
+</ul>
+<ul ng-if="!user">
+  <li>
+    Sign in/up
+  </li>
+</ul>
+
+<ul ng-if="user">
+  <li>
+    <a ui-sref=".Profile">{{user.name}}</a>
+    <img src="{{user.avatar}}" alt="">
+    <ul class="dropdown">
+      <li><a href=".profile">Profile</a></li>
+      <li><a href=".mySequences">My sequences</a></li>
+      <li><a href=".myAshanas">My ashanas</a></li>
+    </ul>
+  </li>
+</ul>

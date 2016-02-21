@@ -36,6 +36,7 @@
     "grunt-svgmin": "^2.0.1",
     "grunt-usemin": "^3.0.0",
     "grunt-wiredep": "^2.0.0",
+    "grunt-json-server": "^0.1.2",
     "jasmine-core": "^2.3.4",
     "jasmine-spec-reporter": "^2.2.2",
     "jshint-stylish": "^2.0.0",

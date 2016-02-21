@@ -83,14 +83,6 @@ module.exports = function (grunt) {
                 ]
             }
         },
-        json_server: {
-            options: {
-                port: 13337,
-                hostname: '0.0.0.0',
-                db: 'db.json'
-            },
-            target: {}
-        },
         focus: {
             dev: {
                 include: [
@@ -514,21 +506,42 @@ module.exports = function (grunt) {
                     API: 'https://yogaSequence.com/api/',
                     environment: 'production'
                 }
+            },
+            localJson: {
+              constants: {
+                API: 'http://localhost:13337/',
+                environment: 'local'
+              }
             }
+        },
+        json_server: { //mini server for the mocks
+          dev: {
+            options: {
+              port: 13337,
+              hostname: '0.0.0.0',
+              db: 'test/mocks/data.json',
+              routes: 'test/mocks/routes.json'
+            }
+          }
         }
     });
     grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
         switch (target) {
-        case 'dist':
-            return grunt.task.run([
-                'build',
-                'connect:dist:keepalive'
-            ]);
-            break;
-        case 'alpha':
-            grunt.task.run('ngconstant:dev');
+          case 'dist':
+              return grunt.task.run([
+                  'build',
+                  'connect:dist:keepalive'
+              ]);
+              break;
+          case 'alpha':
+              grunt.task.run('ngconstant:dev');
+              break;
+          case 'localJson':
+            grunt.task.run('ngconstant:localJson');
             break;
         }
+
+
         grunt.task.run([
             'clean:server',
             'wiredep',

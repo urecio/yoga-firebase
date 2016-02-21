@@ -1,0 +1,6 @@
+<form ng-submit="ysCreateAshanaController.createAshana()" novalidate>
+    <h1>New Ashana</h1>
+    <formly-form model="ysCreateAshanaController.ashana" fields="ysCreateAshanaController.ashanaFields" form="ysCreateAshanaController.ashanaForm">
+        <button type="submit" class="btn btn-primary" ng-disabled="ysCreateAshanaController.ashanaForm.$invalid">Create</button>
+    </formly-form>
+</form>

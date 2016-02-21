@@ -12,27 +12,27 @@
 
 (function(){
 
-  
-  
+
+
 
   function sequences( $stateProvider ) {
 
-    
 
-    $stateProvider.state('sequences', {
-      url: '/sequences', 
-      controller: 'sequencesController as sequencesController',     
-      templateUrl: 'components/sequences/views/sequences.view.html',  
+
+    $stateProvider.state('baselayout.sequences', {
+      url: '/sequences',
+      controller: 'sequencesController as sequencesController',
+      templateUrl: 'components/sequences/views/sequences.view.html',
     });
 
-    
+
 
   }
 
   angular.module('yogaSequence.sequences', [
-    
+
     'ui.router'
-    
+
   ])
     .config(sequences);
 })();

@@ -26,7 +26,7 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-      <div id="container-view" ui-view></div>
+      <div id="container-view" class="container" ui-view></div>
     <!--[if lte IE 9]-->
     <!-- build:js(.) scripts/shim.js -->
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -45,6 +45,10 @@
     <script src="bower_components/restangular/dist/restangular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
+    <script src="bower_components/api-check/dist/api-check.js"></script>
+    <script src="bower_components/angular-formly/dist/formly.js"></script>
+    <script src="bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
     <!-- endbower -->
 
     <!-- endbuild -->
@@ -66,12 +70,22 @@
     <script src="components/ashana/controllers/ashana.controller.js"></script>
     <script src="components/ashanas/ashanas.module.js"></script>
     <script src="components/ashanas/controllers/ashanas.controller.js"></script>
+    <script src="components/ashanas/directives/ys-create-ashana.directive.js"></script>
+    <script src="components/ashanas/services/ashanas.service.js"></script>
     <script src="components/builder/builder.module.js"></script>
     <script src="components/builder/controllers/builder.controller.js"></script>
     <script src="components/home/home.module.js"></script>
     <script src="components/home/controllers/home.controller.js"></script>
+    <script src="components/login/login.module.js"></script>
+    <script src="components/login/controllers/login.controller.js"></script>
+    <script src="components/my-sequences/my-sequences.module.js"></script>
+    <script src="components/my-sequences/controllers/my-sequences.controller.js"></script>
     <script src="components/profile/profile.module.js"></script>
     <script src="components/profile/controllers/profile.controller.js"></script>
+    <script src="components/sequence/sequence.module.js"></script>
+    <script src="components/sequence/controllers/sequence.controller.js"></script>
+    <script src="components/sequences/sequences.module.js"></script>
+    <script src="components/sequences/controllers/sequences.controller.js"></script>
     <!-- /include -->
 
     <!-- endbuild -->

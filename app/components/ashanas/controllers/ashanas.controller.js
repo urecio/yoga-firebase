@@ -9,12 +9,15 @@
  */
 (function(){
 
-  function ashanasController() {
-
+  function ashanasController(ashanas, Ashanas) {
     var self = this;
 
-    this.foo = 'bar';
-
+    this.ashanas = ashanas;
+    this.deleteById = function (id) {
+      Ashanas.deleteById(id).then(function () {
+        _.remove(self.ashanas, {id: id});
+      });
+    };
   }
 
   angular.module('yogaSequence.ashanas')

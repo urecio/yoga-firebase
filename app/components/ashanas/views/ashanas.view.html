@@ -1,1 +1,23 @@
-<p>This is the ashanas view.</p>
+<ys-create-ashana ashanas="ashanasController.ashanas"></ys-create-ashana>
+
+<table st-table="ashanasController.ashanas" class="table table-striped">
+	<thead>
+	<tr>
+		<th>Name</th>
+	</tr>
+  <tr>
+		<th colspan="5"><input st-search="name" class="form-control" placeholder="Search by name..." type="text"/></th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="ashana in ashanasController.ashanas">
+		<td>{{ashana.name}}</td>
+    <td>
+  		<button type="button" ng-click="ashanasController.deleteById(ashana.id)" class="btn btn-sm btn-danger">
+  			<i class="glyphicon glyphicon-remove-circle">
+  			</i>
+  		</button>
+		</td>
+	</tr>
+	</tbody>
+</table>
