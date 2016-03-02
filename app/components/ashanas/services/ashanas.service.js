@@ -9,10 +9,7 @@
    */
   function ashanasService(Restangular) {
     this.create = function (data) {
-      return Restangular.all('ashanas').getList().then(function (ashanas) {
-        data.id = _.maxBy(ashanas, 'id').id + 1;
-        return ashanas.post(data);
-      });
+      return Restangular.all('ashanas').post(data);
     };
     this.getAll = function () {
       return Restangular.all('ashanas').getList();

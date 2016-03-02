@@ -12,27 +12,33 @@
 
 (function(){
 
-  
-  
+
+
 
   function mySequences( $stateProvider ) {
 
-    
 
-    $stateProvider.state('mysequences', {
-      url: '/mySequences', 
-      controller: 'mySequencesController as mySequencesController',     
-      templateUrl: 'components/my-sequences/views/my-sequences.view.html',  
+
+    $stateProvider.state('baselayout.private.mysequences', {
+      url: '/mySequences',
+      controller: 'mySequencesController as mySequencesController',
+      templateUrl: 'components/my-sequences/views/my-sequences.view.html',
+      resolve: {
+        mySequences: function (Sequences, user) {
+          Sequences.getAllByUserId(user.id);
+        }
+      }
     });
 
-    
+
 
   }
 
   angular.module('yogaSequence.mySequences', [
-    
-    'ui.router'
-    
+
+    'ui.router',
+    'restangular'
+
   ])
     .config(mySequences);
 })();

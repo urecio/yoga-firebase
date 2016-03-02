@@ -1,1 +1,31 @@
-<p>This is the sequences view.</p>
+<table st-table="sequencesController.sequences" class="table table-striped">
+	<thead>
+	<tr>
+		<th>Name</th>
+		<th>Ashanas</th>
+	</tr>
+  <tr>
+		<th colspan="5"><input st-search="name" class="form-control" placeholder="Search by name..." type="text"/></th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="sequence in sequencesController.sequences">
+		<td>{{sequence.name}}</td>
+		<td>
+			<span ng-repeat="ashana in sequence.ashanas">{{ashana.name}}<span ng-if="!$last">,</span></span>
+		</td>
+		<td>
+			<form ng-submit="sequencesController.setAshana(sequence.id, selectedAshana.id); selectedAshana = ''" novalidate>
+				<input type="text" ng-model="selectedAshana" uib-typeahead="ashana as ashana.name for ashana in sequencesController.ashanas | filter:$viewValue | limitTo:8" class="form-control">
+				<input type="submit" value="Add">
+			</form>
+		</td>
+    <td>
+  		<button type="button" ng-click="sequencesController.deleteById(sequence.id)" class="btn btn-sm btn-danger">
+  			<i class="glyphicon glyphicon-remove-circle">
+  			</i>
+  		</button>
+		</td>
+	</tr>
+	</tbody>
+</table>

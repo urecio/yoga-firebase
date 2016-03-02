@@ -12,27 +12,35 @@
 
 (function(){
 
-  
-  
+
+
 
   function sequence( $stateProvider ) {
 
-    
 
-    $stateProvider.state('sequence', {
-      url: '/sequence', 
-      controller: 'sequenceController as sequenceController',     
-      templateUrl: 'components/sequence/views/sequence.view.html',  
+
+    $stateProvider.state('baselayout.sequence', {
+      url: '/sequence/{sequenceId}',
+      controller: 'sequenceController as sequenceController',
+      templateUrl: 'components/sequence/views/sequence.view.html',
+      resolve: {
+        sequence: function ($stateParams) {
+          return Sequences.getById($stateParams.get('sequenceId'));
+        }
+      }
     });
 
-    
+
 
   }
 
   angular.module('yogaSequence.sequence', [
-    
-    'ui.router'
-    
+
+    'ui.router',
+    'restangular',
+    'ui.bootstrap',
+    'yogaSequence.sequences'
+
   ])
     .config(sequence);
 })();

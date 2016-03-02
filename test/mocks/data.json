@@ -1,4 +1,10 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "name": "srcrustaceo"
+    }
+  ],
   "ashanas": [
     {
       "id": 1,
@@ -6,7 +12,42 @@
     },
     {
       "id": 2,
-      "name": "Tree"
+      "name": "Tree pose"
+    },
+    {
+      "ashanaId": 2,
+      "sequenceId": 1,
+      "id": 3
+    },
+    {
+      "ashanaId": 2,
+      "sequenceId": 1,
+      "id": 4
+    },
+    {
+      "ashanaId": 2,
+      "sequenceId": 1,
+      "id": 5
+    },
+    {
+      "ashanaId": 2,
+      "sequenceId": 1,
+      "id": 6
+    },
+    {
+      "ashanaId": 1,
+      "sequenceId": 1,
+      "id": 7
+    }
+  ],
+  "sequences": [
+    {
+      "id": 1,
+      "name": "Wake up with energy"
+    },
+    {
+      "id": 2,
+      "name": "Before going to bed"
     }
   ]
 }

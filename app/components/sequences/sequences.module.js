@@ -23,6 +23,15 @@
       url: '/sequences',
       controller: 'sequencesController as sequencesController',
       templateUrl: 'components/sequences/views/sequences.view.html',
+      resolve: {
+        sequences: function (Sequences) {
+          // TODO: instead of getting all, here you should get the first 20? and then getting them on scroll from the page
+          return Sequences.getAllWithAshanas();
+        },
+        ashanas: function (Ashanas) {
+          return Ashanas.getAll();
+        }
+      }
     });
 
 
@@ -31,7 +40,8 @@
 
   angular.module('yogaSequence.sequences', [
 
-    'ui.router'
+    'ui.router',
+    'restangular'
 
   ])
     .config(sequences);

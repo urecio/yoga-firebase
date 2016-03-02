@@ -9,11 +9,12 @@
  */
 (function(){
 
-  function sequencesController() {
+  function sequencesController(sequences, Sequences, ashanas) {
 
-    var self = this;
-
-    this.foo = 'bar';
+    this.sequences = sequences;
+    this.ashanas = ashanas;
+    this.deleteById = Sequences.deleteById;
+    this.setAshana = Sequences.setAshana;
 
   }
 

@@ -9,11 +9,9 @@
  */
 (function(){
 
-  function mySequencesController() {
+  function mySequencesController(mySequences) {
 
-    var self = this;
 
-    this.foo = 'bar';
 
   }
 

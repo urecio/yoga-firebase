@@ -18,6 +18,7 @@
         _.remove(self.ashanas, {id: id});
       });
     };
+    
   }
 
   angular.module('yogaSequence.ashanas')
