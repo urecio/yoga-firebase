@@ -31,7 +31,7 @@
                 placeholder: 'Enter a name',
                 required: true
             }
-        }
+          }
         ];
       },
       controllerAs: 'ysCreateAshanaController',

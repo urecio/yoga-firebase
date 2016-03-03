@@ -41,7 +41,8 @@
   angular.module('yogaSequence.sequences', [
 
     'ui.router',
-    'restangular'
+    'restangular',
+    'ngDraggable'
 
   ])
     .config(sequences);

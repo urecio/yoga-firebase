@@ -9,7 +9,7 @@
  */
 (function(){
 
-  function sequencesController(sequences, Sequences, ashanas) {
+  function sequencesController($scope, sequences, Sequences, ashanas) {
 
     var self = this;
 
@@ -32,6 +32,13 @@
         self.sequences[sequenceIndexOnRepeater].ashanas.splice(ashanaIndexOnRepeater, 1)
       });
     };
+    this.onDropComplete = function (ashanaIndex, obj, evt, sequenceIndex) {
+      var sequence = this.sequences[sequenceIndex];
+      var otherObj = sequence.ashanas[ashanaIndex];
+      var otherIndex = sequence.ashanas.indexOf(obj);
+      sequence.ashanas[ashanaIndex] = obj;
+      sequence.ashanas[otherIndex] = otherObj;
+    }
 
   }
 

@@ -9,6 +9,7 @@
    */
   function ashanasService(Restangular) {
     this.create = function (data) {
+      data.slug = _.snakeCase(data.name).replace(new RegExp('_', 'g'), '-');
       return Restangular.all('ashanas').post(data);
     };
     this.getAll = function () {

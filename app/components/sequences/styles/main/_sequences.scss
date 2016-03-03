@@ -1,7 +1,7 @@
 // PARTIALS
 
-// include: "type": "scss", "files": "../auto-imports/**/*.scss"
-
+// include: "type": "scss", "basePath": "app/components/sequences/styles/main", "files": "../auto-imports/**/*.scss"
+@import "../auto-imports/_nd-draggable.scss";
 // /include
 
 // END PARTIALS
