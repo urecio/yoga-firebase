@@ -12,7 +12,7 @@
 	<tr ng-repeat="sequence in sequencesController.sequences">
 		<td>{{sequence.name}}</td>
 		<td>
-			<span ng-repeat="ashana in sequence.ashanas">{{ashana.name}}<button ng-click="sequencesController.removeAshana(null, ashana.id)"><i class="glyphicon glyphicon-remove"></i></button><span ng-if="!$last">,</span></span>
+			<span ng-repeat="ashana in sequence.ashanas">{{ashana.name}}<button ng-click="sequencesController.removeAshana(sequence.id, ashana.id, $parent.$index, $index)"><i class="glyphicon glyphicon-remove"></i></button><span ng-if="!$last">,</span></span>
 		</td>
 		<td>
 			<form ng-submit="sequencesController.setAshana(sequence.id, selectedAshana.id); selectedAshana = ''" novalidate>

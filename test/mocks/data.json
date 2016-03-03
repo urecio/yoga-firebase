@@ -20,24 +20,9 @@
       "id": 3
     },
     {
-      "ashanaId": 2,
-      "sequenceId": 1,
-      "id": 4
-    },
-    {
-      "ashanaId": 2,
-      "sequenceId": 1,
-      "id": 5
-    },
-    {
-      "ashanaId": 2,
-      "sequenceId": 1,
-      "id": 6
-    },
-    {
       "ashanaId": 1,
       "sequenceId": 1,
-      "id": 7
+      "id": 4
     }
   ],
   "sequences": [

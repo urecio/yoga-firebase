@@ -45,7 +45,7 @@
 
     this.removeAshana = function (sequenceId, ashanaId) {
       // if sequenceId is not specified, is because it is using the unique ashana.id generated for the ashanas in sequences
-      if (!sequenceId) Restangular.one('ashanas', ashanaId).remove();
+      if (!sequenceId) return Restangular.one('ashanas', ashanaId).remove();
       else return Restangular.customDELETE('ashanas', {sequenceId: sequenceId, ashanaId: ashanaId});
     }
   }
