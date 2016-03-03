@@ -406,17 +406,6 @@ module.exports = function (grunt) {
                     }
                 ]
             },
-            dev: {
-              files: [
-                { //bootstrap font icons
-                  flatten: true,
-                  expand: true,
-                  cwd: '.',
-                  dest: '<%= yeoman.app %>/assets/fonts/bootstrap',
-                  src: 'bower_components/bootstrap-sass/assets/fonts/bootstrap/*.*'
-                }
-              ]
-            },
             styles: {
                 expand: true,
                 cwd: '<%= yeoman.app %>/assets/styles',
@@ -556,7 +545,6 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'wiredep',
-            'copy:dev',
             'concurrent:server',
             'autoprefixer',
             'includeSource',
@@ -580,7 +568,6 @@ module.exports = function (grunt) {
           'clean:dist',
           'wiredep',
           'useminPrepare',
-          'copy:dev',
           'sass:dist',
           'imagemin',
           'svgmin',
