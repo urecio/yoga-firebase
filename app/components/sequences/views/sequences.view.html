@@ -9,6 +9,7 @@
 	</tr>
 	</thead>
 	<tbody>
+		TODO: BUG. Elements can be droppable between different sequences!
 	<tr ng-repeat="sequence in sequencesController.sequences">
 		<td>{{sequence.name}}</td>
 		<td>
@@ -19,7 +20,7 @@
 			</div>
 		</td>
 		<td>
-			<form ng-submit="sequencesController.setAshana(sequence.id, selectedAshana.id); selectedAshana = ''" novalidate>
+			<form ng-submit="sequencesController.setAshana(sequence.id, selectedAshana.id, $index); selectedAshana = ''" novalidate>
 				<input type="text" ng-model="selectedAshana" uib-typeahead="ashana as ashana.name for ashana in sequencesController.ashanas | filter:$viewValue | limitTo:8" class="form-control">
 				<input type="submit" value="Add">
 			</form>

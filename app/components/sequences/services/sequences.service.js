@@ -18,6 +18,10 @@
 
         _.each(sequences, function (seq, seqIndex) {
 
+          // sorting by order
+          seq.ashanas = _.sortBy(seq.ashanas, 'order');
+
+          // getting real ashana content
           _.each(seq.ashanas, function (ashana, asIndex) {
             Restangular.one('ashanas', ashana.ashanaId).get().then(function (ashana) {
               delete ashana.id;
@@ -39,8 +43,12 @@
       return Restangular.one('sequences', id).remove();
     };
 
-    this.setAshana = function (sequenceId, ashanaId) {
-      return Restangular.one('sequences', sequenceId).all('ashanas').post({ashanaId: ashanaId});
+    this.setAshana = function (sequenceId, ashanaId, order) {
+      return Restangular.one('sequences', sequenceId).all('ashanas').post({ashanaId: ashanaId, order: order});
+    };
+
+    this.updateSequenceAshana = function (sequenceAshanaId, data) {
+      return Restangular.one('ashanas', sequenceAshanaId).patch(data);
     };
 
     this.removeAshana = function (sequenceId, ashanaId) {

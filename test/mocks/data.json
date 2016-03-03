@@ -17,39 +17,28 @@
       "slug": "tree"
     },
     {
-      "ashanaId": 1,
+      "ashanaId": 2,
+      "order": 2,
       "sequenceId": 1,
-      "id": 4
-    },
-    {
-      "ashanaId": 1,
-      "sequenceId": 2,
-      "id": 5
+      "id": 3
     },
     {
       "ashanaId": 2,
+      "order": 5,
+      "sequenceId": 1,
+      "id": 5
+    },
+    {
+      "ashanaId": 1,
+      "order": 1,
       "sequenceId": 1,
       "id": 6
     },
     {
       "ashanaId": 1,
+      "order": 4,
       "sequenceId": 1,
       "id": 7
-    },
-    {
-      "ashanaId": 2,
-      "sequenceId": 2,
-      "id": 8
-    },
-    {
-      "ashanaId": 1,
-      "sequenceId": 2,
-      "id": 9
-    },
-    {
-      "ashanaId": 2,
-      "sequenceId": 2,
-      "id": 10
     }
   ],
   "sequences": [

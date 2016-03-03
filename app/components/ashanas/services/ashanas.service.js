@@ -13,6 +13,7 @@
       return Restangular.all('ashanas').post(data);
     };
     this.getAll = function () {
+      // TODO: get only ashanas without sequenceId
       return Restangular.all('ashanas').getList();
     };
     this.getById = function (id) {
