@@ -15,6 +15,7 @@
     this.ashanas = ashanas;
     this.deleteById = Sequences.deleteById;
     this.setAshana = Sequences.setAshana;
+    this.removeAshana = Sequences.removeAshana;
 
   }
 

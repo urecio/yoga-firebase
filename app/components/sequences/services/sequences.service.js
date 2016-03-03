@@ -15,11 +15,12 @@
 
     this.getAllWithAshanas = function () {
       return Restangular.all('sequences').customGETLIST(null, {_embed: 'ashanas'}).then(function (sequences) {
-        
+
         _.each(sequences, function (seq, seqIndex) {
 
           _.each(seq.ashanas, function (ashana, asIndex) {
             Restangular.one('ashanas', ashana.ashanaId).get().then(function (ashana) {
+              delete ashana.id;
               angular.extend(sequences[seqIndex].ashanas[asIndex], ashana);
             });
           });
@@ -43,7 +44,9 @@
     };
 
     this.removeAshana = function (sequenceId, ashanaId) {
-      return Restangular.customDELETE('ashanas', {sequenceId: sequenceId, ashanaId: ashanaId});
+      // if sequenceId is not specified, is because it is using the unique ashana.id generated for the ashanas in sequences
+      if (!sequenceId) Restangular.one('ashanas', ashanaId).remove();
+      else return Restangular.customDELETE('ashanas', {sequenceId: sequenceId, ashanaId: ashanaId});
     }
   }
 
